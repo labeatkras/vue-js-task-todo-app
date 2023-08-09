@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Gruppo&family=Julius+Sans+One&family=Tektur:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  background-color: #ffffff;
+  color: #000;
+}
+h1 {
+  font-family: "Tektur", cursive;
+  font-size: 10rem;
+  font-weight: 700;
+  margin-bottom: 10rem;
+  text-align: center;
+  text-shadow: 0 0.5rem 1rem rgba(84, 237, 142, 0.52);
+}
+
+/*********** INPUT CONTAINER ***********/
+
+.input-btn-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.input-btn-container input {
+  height: 2rem;
+  width: 40rem;
+  border-radius: 15px;
+  border: 2px solid #20cca5;
+  padding: 1.5rem;
+  margin-right: 1rem;
+  background: transparent;
+  transition: 300ms ease-in-out;
+}
+.input-btn-container input:focus {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 15px #20cca5 inset;
+}
+.input-btn-container button {
+  width: 7rem;
+  height: 3rem;
+  margin-left: 1rem;
+  border-radius: 15px;
+  background-color: #20cca5;
+  color: #fff;
+}
+.input-btn-container button:hover {
+  background-color: #136b57;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 2px 2px 15px #20cca5 inset;
+}
+
+/*********** TODO CONTAINER ***********/
+
+.todo-container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: space-between;
+  max-width: 60rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  min-height: 10rem;
+}
+.todo-container li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  list-style: none;
+}
+.todo-container li:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 15px #20cca5 inset;
+}
+.todo-label {
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  list-style: none;
+}
+.todo-edit-btn {
+  width: 6rem;
+  height: 2rem;
+  margin-left: 1rem;
+  border-radius: 15px;
+  background-color: #20cca5;
+  color: #fff;
+}
+.todo-edit-btn:hover {
+  background-color: #136b57;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 2px 2px 15px #20cca5 inset;
+}
+
+.done-text {
+  text-decoration: line-through;
+}
+
+/*********** DARKMODE styles for dark mode ***********/
+.dark-mode {
+  background-color: #000000;
+  color: #fff;
+}
+
+.dark-mode .todo-container {
+  background-color: #000000;
+  color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(251, 251, 251, 0.432);
+}
+
+.dark-mode .todo-container li {
+  background-color: #000000;
+  color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(251, 251, 251, 0.432);
+}
+.dark-mode .todo-container li:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 15px #20cca5 inset;
+}
+.dark-mode .todo-label {
+  background-color: #000000;
+  color: #fff;
+}
+
+.dark-mode .input-btn-container input:focus {
+  color: #fff;
+}
+.dark-mode .input-btn-container input {
+  color: #fff;
+}
+
+/*********** APP CONTAINER ***********/
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+/*********** FILTER CONTAINER ***********/
+.filter-text {
+  font-family: "Tektur", cursive;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-align: center;
+  text-shadow: 0 0.5rem 1rem rgba(84, 237, 142, 0.52);
+}
+.filter-checkbox-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  list-style: none;
+}
+
+.filter-checkbox-container label {
+  font-family: "Tektur", cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 0.5rem 1rem rgba(84, 237, 142, 0.52);
+}
+.filter-checkbox-container input[type="checkbox"] {
+  display: none;
+}
+
+.filter-checkbox-container label {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  font-family: "Tektur", cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 0.5rem 1rem rgba(84, 237, 142, 0.52);
+}
+.filter-checkbox-container label:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 15px #20cca5 inset;
+}
+
+.filter-checkbox-container label:before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid #20cca5;
+}
+
+.filter-checkbox-container input[type="checkbox"]:checked + label:before {
+  background-color: #20cca4aa;
+}
+
+/*********** DELETE BUTTON ***********/
+.delete-btn {
+  width: 6rem;
+  height: 2rem;
+  margin-left: 1rem;
+  border-radius: 15px;
+  background-color: #ff5b5b;
+  color: #fff;
+}
+.delete-btn:hover {
+  background-color: #740808;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 2px 2px 15px #ff5b5b inset;
+}
+
+/***************  Lighter ***************/
+
+.l {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 0.75em;
+  box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.3) inset;
+  color: #fdea7b;
+  display: inline-flex;
+  align-items: center;
+  margin: auto;
+  padding: 0.15em;
+  width: 3em;
+  height: 1.5em;
+  transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: fixed;
+  top: 60px;
+  right: 60px;
+}
+
+.l:before,
+.l:after {
+  content: "";
+  display: block;
+}
+
+.l:before {
+  background-color: #d7d7d7;
+  border-radius: 50%;
+  width: 1.2em;
+  height: 1.2em;
+  transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+  z-index: 1;
+}
+
+.l:after {
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.15) 0) 0 50% /
+      50% 100%,
+    repeating-linear-gradient(90deg, #bbb 0, #bbb, #bbb 20%, #999 20%, #999 40%)
+      0 50% / 50% 100%,
+    radial-gradient(circle at 50% 50%, #888 25%, transparent 26%);
+  background-repeat: no-repeat;
+  border: 0.25em solid transparent;
+  border-left: 0.4em solid #d8d8d8;
+  border-right: 0 solid transparent;
+  transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+  transform: translateX(-22.5%);
+  transform-origin: 25% 50%;
+  width: 1.2em;
+  height: 1em;
+  box-sizing: border-box;
+}
+/* Checked */
+.l:checked {
+  background-color: rgba(0, 0, 0, 0.45);
+  box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
+}
+
+.l:checked:before {
+  background-color: currentColor;
+  transform: translateX(125%);
+}
+
+.l:checked:after {
+  border-left-color: currentColor;
+  transform: translateX(-2.5%) rotateY(180deg);
+}
+/* Other States */
+.l:focus {
+  /* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
+  outline: 0;
+}
+
+/*************** TODO CHECKBOX LABEL ***************/
+
+.btn-lock {
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  display: inline-block;
+  background: #20cca5;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 8px 0 0 14px;
+  margin-right: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-lock svg {
+  fill: none;
+  transform: translate3d(0, 0, 0);
+}
+
+.btn-lock svg .bling {
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 3;
+  stroke-dashoffset: 15;
+  transition: all 0.3s ease;
+}
+
+.btn-lock svg .lock {
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 36;
+  transition: all 0.4s ease;
+}
+
+.btn-lock svg .lockb {
+  fill: #fff;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  transform: rotate(8deg);
+  transform-origin: 14px 20px;
+  transition: all 0.2s ease;
+}
+
+#inpLock {
+  display: none;
+}
+
+#inpLock:checked + label {
+  background: #ff5b5b;
+}
+
+#inpLock:checked + label svg {
+  opacity: 1;
+}
+
+#inpLock:checked + label svg .bling {
+  animation: bling6132 0.3s linear forwards;
+  animation-delay: 0.2s;
+}
+
+#inpLock:checked + label svg .lock {
+  stroke-dasharray: 48;
+  animation: locked 0.3s linear forwards;
+}
+
+#inpLock:checked + label svg .lockb {
+  transform: rotate(0);
+  transform-origin: 14px 22px;
+}
+
+@keyframes bling6132 {
+  50% {
+    stroke-dasharray: 3;
+    stroke-dashoffset: 12;
+  }
+
+  100% {
+    stroke-dasharray: 3;
+    stroke-dashoffset: 9;
+  }
+}
+
+@keyframes locked {
+  50% {
+    transform: translateY(1px);
+  }
+}
